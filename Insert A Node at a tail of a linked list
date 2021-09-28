@@ -1,0 +1,40 @@
+
+
+// Complete the insertNodeAtTail function below.
+
+/*
+ * For your reference:
+ *
+ * SinglyLinkedListNode {
+ *     int data;
+ *     SinglyLinkedListNode* next;
+ * };
+ *
+ */
+SinglyLinkedListNode* insertNodeAtTail(SinglyLinkedListNode* head, int data) {
+SinglyLinkedListNode *temp,*trav;
+
+temp=(SinglyLinkedListNode*)malloc(sizeof(SinglyLinkedListNode));
+temp->data=data;
+ temp->next=NULL;
+if(head==NULL)
+{
+ 
+ 
+ head=temp; 
+ return temp; 
+ 
+}
+else
+{
+trav=head;
+while(trav->next!=NULL)
+{
+    trav=trav->next;
+}
+trav->next=temp;
+return head;
+}
+}
+ 
+
