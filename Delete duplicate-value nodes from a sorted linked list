@@ -1,0 +1,39 @@
+
+
+/*
+ * Complete the 'removeDuplicates' function below.
+ *
+ * The function is expected to return an INTEGER_SINGLY_LINKED_LIST.
+ * The function accepts INTEGER_SINGLY_LINKED_LIST llist as parameter.
+ */
+
+/*
+ * For your reference:
+ *
+ * SinglyLinkedListNode {
+ *     int data;
+ *     SinglyLinkedListNode* next;
+ * };
+ *
+ */
+
+SinglyLinkedListNode* removeDuplicates(SinglyLinkedListNode* llist) {
+    SinglyLinkedListNode* temp,*trav;
+    temp=llist;
+    trav=temp->next;
+    while(trav!=NULL)
+    {
+        if(temp->data==trav->data)
+        {
+            temp->next=trav->next;
+            
+            trav=temp->next;
+        }
+        else{
+            temp=trav;
+            trav=trav->next;
+        }
+    }    
+return llist;
+}
+
